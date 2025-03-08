@@ -10,34 +10,41 @@ class MainWindow(QWidget):
         self.setGeometry(100, 100, 400, 300)
 
         # masterLayout = QHBoxLayout()
-
         mainWin = QVBoxLayout()
+
+        #-----------------Action Section-----------------
         actionSection = QHBoxLayout()
 
         sendButton = QPushButton("Send")
         sendButton.clicked.connect(self.send)
 
-        ReciveButton = QPushButton("Recive")
-        ReciveButton.clicked.connect(self.recive)
+        ReceiveButton = QPushButton("Receive")
+        ReceiveButton.clicked.connect(self.recive)
+         
+        actionSection.addWidget(sendButton)
+        actionSection.addWidget(ReceiveButton)
+        #-----------------Action Section-----------------
+
+        #----------------History Section-----------------
+
+        historyButton = QPushButton("History")
+        historyButton.clicked.connect(self.history)
 
         
-        
-        label = QLabel("Hello, World!")
-        label1 = QLabel("Hello, World!")
 
-        layout = QVBoxLayout()
-
-        layout.addWidget(label)
-        layout.addWidget(label1)
-        layout.addStretch(100)
+        #----------------History Section-----------------        
 
         mainWin.addLayout(actionSection)
+        mainWin.addWidget(historyButton)
         self.setLayout(mainWin)
 
     def send(self):
         None
     
     def recive(self):
+        None
+
+    def history(self): 
         None
 
 class LoginWindow(QWidget):
@@ -75,7 +82,7 @@ def main():
     window.show()
 
     loginWindow = LoginWindow()
-    # loginWindow.show()
+    #loginWindow.show()
     
     
     app.exec()
