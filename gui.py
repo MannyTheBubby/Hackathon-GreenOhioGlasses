@@ -18,11 +18,11 @@ class MainWindow(QWidget):
         sendButton = QPushButton("Send")
         sendButton.clicked.connect(self.send)
 
-        ReceiveButton = QPushButton("Receive")
-        ReceiveButton.clicked.connect(self.recive)
+        ConnectButton = QPushButton("Connect")
+        ConnectButton.clicked.connect(self.recive)
          
         actionSection.addWidget(sendButton)
-        actionSection.addWidget(ReceiveButton)
+        actionSection.addWidget(ConnectButton)
         #-----------------Action Section-----------------
 
         #----------------History Section-----------------

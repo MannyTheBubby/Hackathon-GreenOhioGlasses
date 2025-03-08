@@ -1,0 +1,20 @@
+import os
+from datetime import datetime
+
+LOG_FILE = "transfer_history.txt"
+
+def log_transfer_history(filename, addr):
+
+    try:
+        log_entry = f"{datetime.now()} - File: {filename} transferred from {addr}\n"
+        if not os.path.exists(LOG_FILE):
+            with open(LOG_FILE, 'w') as log:
+                log.write("File Transfer History\n")
+                log.write("="*50 + "\n")
+
+        with open(LOG_FILE, 'a') as log:
+            log.write(log_entry)
+            print("Transfer history logged.")
+
+    except Exception as e:
+        print("An error occurred while logging transfer history: {e}")
