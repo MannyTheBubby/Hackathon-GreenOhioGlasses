@@ -5,7 +5,7 @@ import hashlib
 BUFFER_SIZE = 4096 
 KEY = b'secure_key_16_bytes'
 
-def decrypt_file(data, key):
+def encrypt_file(data, key):
     nonce = data[:16]
     cipher = AES.new(hashlib.sha256(key).digest(), AES.MODE_EAX, nonce=nonce)
     return cipher.decrypt(data[16:])  
