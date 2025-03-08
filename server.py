@@ -4,6 +4,7 @@ host = input(str("Please eenter the host address of the sender: "))
 port = 8080
 s.connect((host,port))
 print("Connected!")
+#hrllo friend
 
 
 filename = input(str("Please enter the filename of the file you with to receive: "))
