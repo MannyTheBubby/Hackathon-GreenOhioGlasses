@@ -1,6 +1,9 @@
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 
+from server import encrypt_file, receive_file
+from cli import decrypt_file
+
 window = None
 
 class MainWindow(QWidget):

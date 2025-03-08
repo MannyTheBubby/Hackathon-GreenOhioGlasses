@@ -30,7 +30,7 @@ try:
             file_data = file.read(BUFFER_SIZE)
             if not file_data:
                 break
-            encrypted_data = encrypt_file(file_data, KEY)
+            encrypted_data = decrypt_file(file_data, KEY)
             conn.send(encrypted_data)
             print("Sending data...")
 
