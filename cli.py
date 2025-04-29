@@ -5,7 +5,7 @@ import hashlib
 BUFFER_SIZE = 4096 
 KEY = b'secure_key_16_bytes'
 
-def encrypt_file(data, key):
+def decrypt_file(data, key):
     nonce = data[:16]
     cipher = AES.new(hashlib.sha256(key).digest(), AES.MODE_EAX, nonce=nonce)
     return cipher.encrypt(data[16:])
@@ -30,7 +30,7 @@ try:
             file_data = file.read(BUFFER_SIZE)
             if not file_data:
                 break
-            encrypted_data = encrypt_file(file_data, KEY)
+            encrypted_data = decrypt_file(file_data, KEY)
             conn.send(encrypted_data)
             print("Sending data...")
 
