@@ -13,7 +13,7 @@ class MainWindow(QWidget):
         mainWin = QVBoxLayout()
 
         #-----------------Action Section-----------------
-        actionSection = QHBoxLayout()
+        actionSection = QHBoxLayout()  
 
         sendButton = QPushButton("Send")
         sendButton.clicked.connect(self.send)
